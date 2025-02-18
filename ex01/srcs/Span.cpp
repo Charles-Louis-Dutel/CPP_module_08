@@ -6,7 +6,7 @@
 /*   By: cdutel <cdutel@42student.fr>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/05 11:44:19 by cdutel            #+#    #+#             */
-/*   Updated: 2025/02/05 15:01:16 by cdutel           ###   ########.fr       */
+/*   Updated: 2025/02/18 15:10:14 by cdutel           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,6 +66,7 @@ int	Span::shortestSpan(void) const
 	shortest = copy[1] - copy[0];
 	for (unsigned int i = 0; i < this->_actual_size - 1; i++)
 	{
+		//std::cout << copy[i] << std::endl;
 		if (copy[i + 1] - copy[i] < shortest)
 			shortest = copy[i + 1] - copy[i];
 	}

@@ -6,7 +6,7 @@
 /*   By: cdutel <cdutel@42student.fr>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/05 11:44:07 by cdutel            #+#    #+#             */
-/*   Updated: 2025/02/05 16:15:24 by cdutel           ###   ########.fr       */
+/*   Updated: 2025/02/18 15:18:29 by cdutel           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,10 +63,8 @@ class	Span
 template<typename It>
 void	Span::addSeveralNumbers(It begin, It end)
 {
-	if (this->_actual_size + std::distance(begin, end) > this->_max_size)
-		throw Span::SpanIsFullException();
-	this->_vec.insert(this->_vec.end(), begin, end);
-	this->_actual_size += std::distance(begin, end);
+	for (It it = begin; it != end; it++)
+		this->addNumber(*it);
 }
 
 #endif
